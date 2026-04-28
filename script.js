@@ -1,5 +1,14 @@
-function playSound(id) {
+function playSound(id, button) {
   const audio = document.getElementById(id);
-  audio.currentTime = 0; // reinicia si ya estaba sonando
+
+  // reinicia el sonido
+  audio.currentTime = 0;
   audio.play();
+
+  // animación extra
+  button.classList.add("playing");
+
+  setTimeout(() => {
+    button.classList.remove("playing");
+  }, 300);
 }
