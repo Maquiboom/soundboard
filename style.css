@@ -1,14 +1,46 @@
+/* VARIABLES DE COLOR */
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --card: #f2f2f2;
+  --primary: #1db954;
+}
+
+/* TEMA OSCURO */
+body.dark {
+  --bg: #121212;
+  --text: #ffffff;
+  --card: #1e1e1e;
+  --primary: #1db954;
+}
+
+/* BASE */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #121212;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: 0.3s;
 }
 
-h1 {
-  margin-top: 20px;
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
 }
 
+#themeToggle {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* CONTENEDOR */
 .container {
   margin-top: 40px;
   display: flex;
@@ -16,7 +48,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* BOTÓN */
+/* BOTONES */
 .sound-btn {
   display: flex;
   flex-direction: column;
@@ -31,11 +63,10 @@ h1 {
   border-radius: 20px;
   cursor: pointer;
 
-  background: #1db954;
-  color: white;
+  background: var(--card);
+  color: var(--text);
 
-  font-size: 18px;
-  transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+  transition: 0.2s;
 }
 
 /* ICONO */
@@ -44,23 +75,18 @@ h1 {
   margin-bottom: 8px;
 }
 
-/* TEXTO */
-.label {
-  font-size: 14px;
-}
-
 /* HOVER */
 .sound-btn:hover {
-  background: #17a74a;
+  background: var(--primary);
+  color: white;
 }
 
-/* ANIMACIÓN AL PULSAR */
+/* CLICK */
 .sound-btn:active {
   transform: scale(0.9);
-  box-shadow: 0 0 20px #1db954;
 }
 
-/* EFECTO EXTRA (cuando JS añade clase) */
+/* ANIMACIÓN */
 .sound-btn.playing {
   animation: pulse 0.3s ease;
 }
