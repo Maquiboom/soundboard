@@ -11,20 +11,62 @@ h1 {
 
 .container {
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-button {
-  padding: 15px 25px;
-  margin: 10px;
-  font-size: 16px;
+/* BOTÓN */
+.sound-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 120px;
+  margin: 15px;
+
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
+
   background: #1db954;
   color: white;
-  transition: 0.2s;
+
+  font-size: 18px;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
 }
 
-button:hover {
+/* ICONO */
+.icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* TEXTO */
+.label {
+  font-size: 14px;
+}
+
+/* HOVER */
+.sound-btn:hover {
   background: #17a74a;
+}
+
+/* ANIMACIÓN AL PULSAR */
+.sound-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 20px #1db954;
+}
+
+/* EFECTO EXTRA (cuando JS añade clase) */
+.sound-btn.playing {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
